@@ -1,6 +1,12 @@
 
 const apiUrl = "https://makeup-api.herokuapp.com/api/v1/products.json"
 
+
+
+const preLoader = document.createElement("div")
+preLoader.className="preloader"
+document.body.append(preLoader)
+
 const title = document.createElement("h1")
 title.className="title"
 title.innerText = "MAKEUP PRODUCTS"
@@ -21,6 +27,9 @@ const fetchData = async function(url){
         const data = await fetch(url);
         const response = await data.json()
         createObjLoop(response)
+        if(data.status == 200){
+            preLoader.style.display="none"
+        }
     } catch (err){
         console.log(err.message);
     }
@@ -128,6 +137,7 @@ list.addEventListener("click", (event)=>{
         parent.style.display = "none"
     }
 })
+
 
 
 

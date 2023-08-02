@@ -31,8 +31,10 @@ font-size: 0.9rem;
 }
 .description-box{
     position: absolute;
-    background-color: #131313;
-    color: #fff;
+    /* background-color: #131313; */
+    background-color: #fff;
+    /* color: #fff; */
+    color: #000000;
     padding: 1rem;
     top: 0;
     bottom: 0;
@@ -49,7 +51,10 @@ font-size: 0.9rem;
     color: #000000;
     transition: all 0.3s;
     width: 100%;
+    left: 0;
     margin-top: 1rem;
+    position: absolute;
+    bottom: 0.8rem;
 }
 .des-box-close-btn:hover{
     background-color: #000000;
@@ -124,6 +129,8 @@ img:hover{
     text-align: center;
     padding: 2rem;
     background-color: #F4E04D;
+    z-index: 100;
+    position: relative;
 }
 .search-box {
     background-color: #252525;
@@ -133,7 +140,7 @@ img:hover{
     top: 0;
     display: flex;
     justify-content: center;
-    z-index: 99;
+    z-index: 100;
 }
 .search-box input {
     width: 40%;
@@ -159,6 +166,15 @@ img:hover{
 }
 .clear-btn{
     display: none;
+}
+.preloader{
+    background: #000 url(https://media0.giphy.com/media/3o7bu3XilJ5BOiSGic/giphy.gif) no-repeat center center;
+    background-size: 8rem;
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    z-index: 99;
+    display: block;
 }
 
 @media only screen and (max-width:800px) {
@@ -235,6 +251,9 @@ img:hover{
     .description-box{
         padding: 0.5rem;
         font-size: 0.4rem;
+    }
+    .preloader{
+        background-size: 4rem;
     }
 }
 @media only screen and (max-width:380px){
